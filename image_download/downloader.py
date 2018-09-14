@@ -89,6 +89,10 @@ class Downloader(Consumer):
 
     def download(self, json_job, dst_store):
         """download and stash image from gsv api."""
+        def exists(f):
+            p = Path(f)
+            return p.is_file() and p.stat().st_size > 0
+
         job_dict = json.loads(json_job)
         self.logger.info("*** processing ***")
         self.logger.info(job_dict)
@@ -105,7 +109,7 @@ class Downloader(Consumer):
     
         status = {'image': None, 'meta': None}
         # download the image
-        if Path(dst_img_file).is_file():
+        if exists(dst_img_file):
             self.logger.warning("already have {}".format(dst_img_file))
             status['image'] = 'exists'
         else:
@@ -117,7 +121,7 @@ class Downloader(Consumer):
                 status['image'] = 'nok'
                 
         # download the meta data
-        if Path(dst_meta_file).is_file():
+        if exists(dst_meta_file):
             self.logger.warning("alread have {}".format(dst_meta_file))
             status['meta'] = 'exists'
         else:

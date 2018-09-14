@@ -1,0 +1,2 @@
+infrastructure/queue_monitor/aurora
+infrastructure/queue_monitor/*.gz
