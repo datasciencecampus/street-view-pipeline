@@ -16,8 +16,11 @@ SCHEME=0
 SRC_QUEUE="image_processing_jobs"
 SRC_STORE="../downloaded_images"
 
+# vegeation calculation plugin
+PLUGIN="Green"
+
 for((i=1; i <= $PROCS; i++)) ;do
   worker_name=$(printf "%04d" $i)_r_proc 
   echo $worker_name
-  python3 ./image_processor.py $worker_name $SCHEME $SRC_QUEUE $SRC_STORE &  
+  python3 ./image_processor.py $worker_name $SCHEME $SRC_QUEUE $SRC_STORE $PLUGIN &  
 done

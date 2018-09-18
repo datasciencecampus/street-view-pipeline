@@ -2,14 +2,15 @@ import os
 import cv2
 import numpy as np
 from PIL import Image
+from plugin import Plugin
 
 
-class Green(): 
+class Green(Plugin):
 
     def __init__(self):
         pass
 
-    def green_from_file(self, image_path):
+    def vegetation_from_file(self, image_path):
         """Read in image from file."""
         if not os.path.exists(image_path):
             return -1
@@ -23,7 +24,6 @@ class Green():
         image[:,:,1] = np.where(mask, 255, image[:,:,1])
         x = Image.fromarray(np.uint8(image))
         x.save(dst)
-
 
     def green(self, image):
         """Calculate foliage coverage for RGB image.
@@ -61,11 +61,10 @@ class Green():
         
         return cov
 
-
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     import sys
     test_image = sys.argv[1] 
     g = Green()
-    green = g.green_from_file(test_image)
+    green = g.vegetation_from_file(test_image)
     print("{:.4f}".format(green))

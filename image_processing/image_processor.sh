@@ -10,4 +10,7 @@ SCHEME=0
 SRC_QUEUE="image_processing_jobs"
 SRC_STORE="../downloaded_images"
 
-python3 ./image_processor.py $WORKER_NAME $SCHEME $SRC_QUEUE $SRC_STORE 
+# vegetation calculation plugin
+PLUGIN="Green"
+
+python3 ./image_processor.py $WORKER_NAME $SCHEME $SRC_QUEUE $SRC_STORE $PLUGIN
