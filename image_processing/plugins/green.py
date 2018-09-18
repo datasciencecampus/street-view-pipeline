@@ -8,7 +8,7 @@ from plugin import Plugin
 class Green(Plugin):
 
     def __init__(self):
-        pass
+        super().__init__() 
 
     def vegetation_from_file(self, image_path):
         """Read in image from file."""
