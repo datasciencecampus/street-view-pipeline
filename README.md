@@ -410,10 +410,7 @@ Both tools have been used in this project.
 
 ## Python
 ```
-sudo pip3 install requests
-sudo pip3 install beanstalk
-sudo pip3 install pystalkd
-sudo pip3 install opencv-python
+pip3 install -r requirements.txt
 ```
 
 # Licence
