@@ -1,8 +1,3 @@
-import sys
-sys.path.append('plugins')
-from plugins.plugin import Plugin
-
-
 class PluginFactory():
 
     def instance(cls):

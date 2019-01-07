@@ -2,3 +2,9 @@ requests
 beanstalk
 pystalkd
 opencv-python
+pillow
+numpy
+flask
+flask_mysqldb
+shapely
+flask-cli

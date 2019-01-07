@@ -7,7 +7,3 @@ distributed queues etc used in the image processing pipeline.
 
 Using [beanstalkd](https://github.com/kr/beanstalkd) for queues. 
 All conf in [queue/](queue/).
-
-### Todo
-
-Docker container.

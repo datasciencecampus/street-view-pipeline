@@ -1,9 +1,9 @@
-# Street view image processing
+# Image processing
 
 This module consumes from the **image\_processing\_jobs** queue.
 
 Each consumed job is an image processing task. Upon receiving a new job, the 
-consumer will obtain the correspdonding image from the image store (local dir)
+consumer will obtain the corresponding image from the image store (local dir)
 of the form:
 
 ```
@@ -16,12 +16,3 @@ boxes, green index..)
 
 At this stage the result is appended to a csv. Although later will be inserted
 into a database.
-
-## Dependencies
-
-```bash
-sudo pip3 install beanstalk
-sudo pip3 install pystalkd
-sudo pip3 install opencv-python
-```
-

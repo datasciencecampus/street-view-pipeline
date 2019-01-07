@@ -3,7 +3,7 @@ def point_idw(src, dst, weight):
 
     weight = 1 / (number of points to interpolate + 1).
     """
-    return (1-weight)*(max(0, src) + weight*max(0, dst)
+    return (1-weight)*(max(0, src)) + weight*max(0, dst)
 
 
 def interpolate_segment(src, dst, n):

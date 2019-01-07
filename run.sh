@@ -23,15 +23,14 @@ while [ $(curl -sI http://www.google.co.uk |grep "200 OK" |wc -l) == 0 ] ;do
   sleep $count
 done
 
-echo "==== get pending jobs from image api ===="
+echo "==== get 1000 pending jobs from image api ===="
 cd data_load
-python3 ./batch_loader.py 25000 
+python3 ./batch_loader.py 1000
 cd ..
 
 echo "==== downloading images ===="
 cd image_download
-key=$(cat key.txt |head -1)
-python3 ./downloader.py 0 image_download_jobs image_processing_jobs ../downloaded_images $key
+python3 ./downloader.py 0 image_download_jobs image_processing_jobs ../downloaded_images
 cd ..
 
 echo "==== processing images ===="

@@ -12,6 +12,7 @@ app.config['MYSQL_DB'] = 'streetview'
 mysql = MySQL()
 mysql.init_app(app)
 
+
 def sanitise(db_job):
     """convert WKT point to shapely geom."""
     wkt_point = db_job.pop('geom')
@@ -64,6 +65,7 @@ def jobs(city, sample_order):
     jobs = [sanitise(dict(zip(cols, row))) for row in rv]
  
     return jsonify(jobs)
+
 
 @app.route('/api/all_jobs', defaults={'limit': 25000})
 @app.route('/api/all_jobs/<limit>')

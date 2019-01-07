@@ -2,6 +2,7 @@
 import logging
 import requests
 
+
 class API():
 
     def __init__(self):

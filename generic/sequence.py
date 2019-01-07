@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def fold(x):
     """fold a list x into equal parts.
 
@@ -48,9 +49,8 @@ def schedule(x):
 
 
 def pp(x):
-   """just vis."""
-   ind, depth = schedule(x)
-   md = max(depth) + 1
-   for ind, depth in zip(ind, depth):
-       print("{:003d} {}".format(ind, "*" * ((md - depth) **2)))     
-
+    """just vis."""
+    ind, depth = schedule(x)
+    md = max(depth) + 1
+    for ind, depth in zip(ind, depth):
+        print("{:003d} {}".format(ind, "*" * ((md - depth) ** 2)))
